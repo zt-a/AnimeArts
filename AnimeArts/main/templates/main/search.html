@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Результаты поиска{% endblock %}
+
+{% block content %}
+  <h1>Результаты поиска</h1>
+
+  <form method="GET" action="{% url 'search' %}">
+    <div class="form-errors">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p class="form-input-p"><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> {{ f }} </p>
+        <div class="form-text text-muted">{{ f.errors }}</div>
+        <br>
+        {% endfor %}
+    <button type="submit" class="btn btn-primary">Искать</button>
+  </form>
+<br>
+  {% if results %}
+    <h2>Результаты поиска</h2>
+    <div class="row animeArts">
+    <ul>
+       {% for art in results %}
+       <li>
+          <img src="{{ art.image.url }}" alt="{{ anime.name }}" width="300px">
+          <h3>{{ art.name }}</h3>
+          <p>Жанр:
+          {% for g in art.genres.all %}
+          {{ g.name }}
+            {% empty %}
+            Anime
+          {% endfor %}
+          </p>
+          <p>{{ art.description }}</p>
+          <p style="float: right; margin: 10px;"><a href="{{ art.image.url }}" download=""><button type="button" class="btn btn-primary">Скачать</button></i></a></p>
+        </li>
+       {% empty %}
+            <p>Ничего не найдено.</p>
+      {% endfor %}
+    </ul>
+    <!-- Добавьте дополнительные карточки для других продуктов -->
+  </div>
+  {% else %}
+    <p>Ничего не найдено.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Публикация{% endblock %}
+
+{% block content %}
+    <h1>Публикация аниме картинки</h1>
+    <p>Пожалуйста публикуйте только аниме арты и больше нечего</p>
+<hr>
+<p>Если администрация узнает что контент не аниме его тут же удалят если непристойное то вас забанят</p>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="form-errors">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p class="form-input-p"><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> {{ f }} </p>
+        <div class="form-text text-muted">{{ f.errors }}</div>
+        <br>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary" style="margin-top: 800px; width: 1200px; height: 100px;">Опубликовать</button>
+    </form>
+{% endblock %}

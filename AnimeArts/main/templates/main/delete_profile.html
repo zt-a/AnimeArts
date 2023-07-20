@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Удаление профиля {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Удалить профиль</h1>
+    <p class="confirmation-message">Вы уверены, что хотите удалить свой профиль?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+  </div>
+{% endblock content %}

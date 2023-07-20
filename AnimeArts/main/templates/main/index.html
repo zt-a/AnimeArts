@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+  <div class="jumbotron">
+    <h1 class="display-4">Добро пожаловать в сайт - AnimeArts!</h1>
+    <p class="lead">Лучший аниме-сайт с аниме искусствами.</p>
+    <hr class="my-4">
+    <p>У нас вы найдете лучшие аниме картинки с хорошим качеством.</p>
+    <div class="animeArts">
+      <ul>
+    {% for art in animeArts %}
+        <li>
+          <img src="{{ art.image.url }}" alt="{{ anime.name }}" width="300px">
+          <h3>{{ art.name }}</h3>
+          <p>Жанр:
+          {% for g in art.genres.all %}
+          {{ g.name }}
+            {% empty %}
+            Anime
+          {% endfor %}
+          </p>
+          <p>{{ art.description }}</p>
+          <p style="float: right; margin: 10px;"><a href="{{ art.image.url }}" download=""><button type="button" class="btn btn-primary">Скачать</button></i></a></p>
+        </li>
+    {% endfor %}
+        </ul>
+    </div>
+
+  </div>
+{% endblock %}

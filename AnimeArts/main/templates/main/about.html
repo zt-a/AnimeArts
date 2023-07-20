@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}О нас{% endblock %}
+
+{% block content %}
+  <h1>О нас</h1>
+    <p>Добро пожаловать на наш сайт Anime Art! Мы предоставляем коллекцию аниме искусства для всех любителей японской анимации.</p>
+    <p>Здесь вы можете найти множество аниме картинок, описаний и жанров, чтобы наслаждаться вашими любимыми аниме персонажами.</p>
+    <p>Мы надеемся, что наш сайт приносит вам радость и вдохновение!</p>
+  <div class="socialNetwork">
+        <ul class="icons">
+            <li><a href="https://wa.me/+996701500422"><img src="{% static 'main/img/icons/WhatsApp.png' %}" alt="WhatsAppContact" width="40px"></a></li>
+            <li><a href="https://github.com/zt-a/"><img src="{% static 'main/img/icons/github2.png' %}" alt="Github" width="40px"></a></li>
+            <li><a href="mailto: zt20061113@gmail.com"><img src="{% static 'main/img/icons/Gmail2.png' %}" alt="Gmail" width="40px"></a></li>
+            <li><a href="https://instagram.com/_.zhyrgal._"><img src="{% static 'main/img/icons/Instagram.png' %}" alt="Instagram" width="40px"></a></li>
+            <li><a href="https://t.me/zhyrgal_tg"><img src="{% static 'main/img/icons/Telegram.png' %}" alt="Telegram" width="40px"></a></li>
+            <li><a href="https://www.facebook.com/zhyrgal.tagaibekov/"><img src="{% static 'main/img/icons/Facebook2.png' %}" alt="Facebook" width="40px"></a></li>
+            <li><a href="https://youtube.com/@IT_science"><img src="{% static 'main/img/icons/youtube.png' %}" alt="Youtube" width="40px"></a></li>
+        </ul>
+    </div>
+
+{% endblock %}

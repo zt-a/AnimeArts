@@ -1,0 +1,96 @@
+/* Общие стили */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mt-4 {
+  margin-top: 4rem;
+}
+
+.mt-5 {
+  margin-top: 5rem;
+}
+
+.py-3 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Стили для навигационной панели */
+.navbar {
+  border-radius: 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: #fff;
+}
+
+/* Стили для основного контента */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+/* Стили для подвала */
+footer {
+  background-color: #f8f9fa;
+}
+
+
+.aside-container {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
+
+.animeArts ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.animeArts ul li {
+    width: 300px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+.socialNetwork {
+    width: 500px;
+    margin: auto;
+}
+
+.icons {
+    display: flex;
+    list-style: none;
+}
+
+.icons li {
+    margin: 10px;
+}
+
+
+.custom_a {
+    color: #0352fc;
+}

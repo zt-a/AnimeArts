@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Обратная связь{% endblock %}
+
+{% block content %}
+  <h1>Обратная связь</h1>
+  <p>Если у вас есть вопросы, комментарии или предложения, пожалуйста, заполните форму ниже, чтобы связаться с нами:</p>
+  <form method="post">
+      {% csrf_token %}
+    <div class="form-errors">{{ form.non_field_errors }}</div>
+        {% for f in form %}
+        <p class="form-input-p"><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> {{ f }} </p>
+        <div class="form-text text-muted">{{ f.errors }}</div>
+        <br>
+        {% endfor %}
+    <button type="submit" class="btn btn-primary">Отправить</button>
+  </form>
+{% endblock %}
